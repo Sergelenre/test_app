@@ -1,12 +1,9 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:test/feature/presentation/widgets/register_widget.dart';
+import 'package:test/feature/presentation/widgets/register_login_widget.dart';
+import 'package:test/sharedCustoms/auth_custom_header.dart';
 import 'package:test/sharedCustoms/custom_button.dart';
 import 'package:test/sharedCustoms/custom_scaffold.dart';
-import 'package:test/sharedCustoms/custom_text.dart';
-import 'package:test/sharedCustoms/custom_textField.dart';
 import 'package:test/sharedCustoms/value_listenable_builder.dart';
-import 'package:test/theme/app_color.dart';
 
 class CreateAccountScreen extends StatefulWidget {
   const CreateAccountScreen({super.key});
@@ -68,18 +65,10 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CustomText(
-                text: "Create and Account",
-                fontSize: 25,
-                fontWeight: FontWeight.w600,
+              AuthCustomHeader(
+                title: "Create an Account",
+                subTitle: "Enter your mobile number to verify your account",
               ),
-              const SizedBox(height: 8),
-              CustomText(
-                text: "Enter your mobile number to verify your account",
-                fontSize: 13,
-                color: AppColors.textGray,
-              ),
-              const SizedBox(height: 20),
               RegisterWidget(
                 passwordController: _password,
                 phoneController: _phoneNumber,

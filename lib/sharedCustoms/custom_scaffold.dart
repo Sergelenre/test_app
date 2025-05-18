@@ -5,12 +5,16 @@ class CustomScaffold extends StatefulWidget {
   final String title;
   final Widget body;
   final bool hideAppBar;
+  final bool isHomeScreen;
+  final Color backgroundColor;
 
   const CustomScaffold({
     super.key,
     required this.title,
     required this.body,
     this.hideAppBar = false,
+    this.isHomeScreen = false,
+    this.backgroundColor = AppColors.background,
   });
 
   @override
@@ -21,6 +25,7 @@ class _CustomScaffoldState extends State<CustomScaffold> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: widget.backgroundColor,
       appBar:
           widget.hideAppBar
               ? null
@@ -28,12 +33,15 @@ class _CustomScaffoldState extends State<CustomScaffold> {
                 backgroundColor: AppColors.background,
                 title: Text(widget.title),
                 leading: IconButton(
-                  icon: const Icon(Icons.arrow_back),
+                  icon: const Icon(Icons.arrow_back_ios),
                   onPressed: () => Navigator.of(context).pop(),
                 ),
               ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        padding:
+            widget.isHomeScreen == true
+                ? const EdgeInsets.symmetric(horizontal: 0.0)
+                : const EdgeInsets.symmetric(horizontal: 16.0),
         child: widget.body,
       ),
     );

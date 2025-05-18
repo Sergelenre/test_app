@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test/sharedCustoms/auth_custom_header.dart';
 import 'package:test/sharedCustoms/custom_button.dart';
 import 'package:test/sharedCustoms/custom_scaffold.dart';
 import 'package:test/sharedCustoms/custom_text.dart';
@@ -41,18 +42,10 @@ class _ConfirmPhoneScreenState extends State<ConfirmPhoneScreen> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CustomText(
-                text: "Confirm your phone",
-                fontSize: 25,
-                fontWeight: FontWeight.w600,
+              AuthCustomHeader(
+                title: "Confirm your phone",
+                subTitle: "We send 6 digits code to 89401553",
               ),
-              const SizedBox(height: 8),
-              CustomText(
-                text: "We sent 6-digit code to +976 8940-1553",
-                fontSize: 13,
-                color: AppColors.textGray,
-              ),
-              const SizedBox(height: 35),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 60),
                 child: Row(

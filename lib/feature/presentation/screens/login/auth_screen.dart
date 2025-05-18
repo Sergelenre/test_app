@@ -25,6 +25,7 @@ class _AuthScreenState extends State<AuthScreen> {
             text: "Create your\nCoinpay account",
             fontSize: 25,
             fontWeight: FontWeight.w600,
+            textAlign: TextAlign.center,
           ),
           SizedBox(height: 10),
           CustomText(
